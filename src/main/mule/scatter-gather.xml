@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:file="http://www.mulesoft.org/schema/mule/file"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="d7f1f5dd-6da7-46fc-9940-e2e3a2fc54cc" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="scatter-gather-flowFlow" doc:id="ae7ebad3-9ba2-46f5-a8ce-049fa10348da" >
+		<http:listener doc:name="Listener" doc:id="256391d7-b6da-4f47-aad6-641462f64a5a" config-ref="HTTP_Listener_config" path="/scatter"/>
+		<logger level="INFO" doc:name="Logger" doc:id="22cb2668-898f-4b69-8c7b-220937c0dcfd" message='"Scatter Gather"'/>
+		<scatter-gather doc:name="Scatter-Gather" doc:id="22897715-1f22-4448-ad99-ad33fa39c929" >
+			<route >
+				<logger level="INFO" doc:name="Logger" doc:id="c7263cb8-cd7a-4584-bf08-77610f7d9f6d" message='"Read component"'/>
+				<file:read doc:name="Read" doc:id="b471daa0-39b0-487f-b3ba-a112b68d07ef" path="C:\Users\Mule\Desktop\Doc\sample.xml"/>
+				<logger level="INFO" doc:name="Logger" doc:id="17152e0c-910f-40d9-b928-ec722ae6b2d0" message="#[payload]" />
+			
+</route>
+			<route >
+				<set-variable value="#[attributes.headers.fruitName]" doc:name="Set Variable" doc:id="59b14587-89c7-4585-90ff-5069e9e90f8a" variableName="fruitName"/>
+				<logger level="INFO" doc:name="Logger" doc:id="aa778d0a-fa42-4fe7-a77f-58b58b01d0d3" message="#[vars.fruitName]"/>
+			</route>
+		</scatter-gather>
+	
+</flow>
+</mule>
+
