@@ -29,6 +29,19 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+				    <cloudHubDeployment>
+				      <uri>https://anypoint.mulesoft.com</uri>
+				      <muleVersion>4.4.0</muleVersion>
+				      <username>adi09</username>
+				      <password>Aditya09@</password>
+				      <applicationName>scatter-gather</applicationName>
+				      <environment>sandbox</environment>
+				      <!-- <region>${region}</region> -->
+				      <workers>1</workers>
+				      <workerType>macro</workerType>
+				      </cloudHubDeployment>
+			  	</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -79,6 +92,8 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</pluginRepository>
+
+		
 	</pluginRepositories>
 
 </project>
