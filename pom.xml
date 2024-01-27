@@ -33,7 +33,7 @@
 				    <cloudHubDeployment>
 				      <uri>https://anypoint.mulesoft.com</uri>
 				      <muleVersion>4.4.0</muleVersion>
-				      <username>adi09</username>
+				      <username>Adi_09</username>
 				      <password>Aditya09@</password>
 				      <applicationName>scatter-gather</applicationName>
 				      <environment>SANDBOX</environment>
