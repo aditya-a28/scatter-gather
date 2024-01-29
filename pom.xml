@@ -40,7 +40,7 @@
 				      <!-- <region>${region}</region> -->
 				      <workers>1</workers>
 				      <workerType>Micro</workerType>
-				      <objectType>True</objectType>
+				      <!-- <objectType>True</objectType> -->
 				      </cloudHubDeployment>
 			  	</configuration>
 			</plugin>
