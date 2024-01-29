@@ -39,7 +39,8 @@
 				      <environment>Sandbox</environment>
 				      <!-- <region>${region}</region> -->
 				      <workers>1</workers>
-				      <objectType>macro</objectType>
+				      <workerType>Micro</workerType>
+				      <objectType>True</objectType>
 				      </cloudHubDeployment>
 			  	</configuration>
 			</plugin>
