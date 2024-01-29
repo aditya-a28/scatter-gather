@@ -35,11 +35,12 @@
 				      <muleVersion>4.4.0</muleVersion>
 				      <username>Adi_09</username>
 				      <password>Aditya09@</password>
-				      <applicationName>scatter-gather</applicationName>
-				      <environment>SANDBOX</environment>
+				      <applicationName>cicd-maven-gather</applicationName>
+				      <environment>sandbox</environment>
 				      <!-- <region>${region}</region> -->
 				      <workers>1</workers>
-				      <workerType>macro</workerType>
+					<workerType>Micro</workerType>
+                       			<objectStoreV2>true</objectStoreV2>
 				      </cloudHubDeployment>
 			  	</configuration>
 			</plugin>
